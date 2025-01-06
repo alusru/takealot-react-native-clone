@@ -1,22 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { StyleSheet, Text, View, Image } from "react-native";
 import HomeScreen from "./screens/HomeScreen";
 import CategoryScreen from "./screens/CategoryScreen";
 import DealScreen from "./screens/DealScreen";
 import ListScreen from "./screens/ListScreen";
 import AccountScreen from "./screens/AccountScreen";
-import {
-  createStaticNavigation,
-  NavigationContainer,
-} from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Ionicons } from "@expo/vector-icons";
+import { SvgUri } from "react-native-svg";
 
 export default function App() {
   const Tab = createBottomTabNavigator();
-  const Stack = createStaticNavigation();
+  const Stack = createStackNavigator();
 
-  return (
-    <NavigationContainer>
+  function TabNavigation() {
+    return (
       <Tab.Navigator>
         <Tab.Screen
           name="Home"
@@ -26,6 +25,13 @@ export default function App() {
             tabBarIcon: ({ color, size }) => (
               <Ionicons name={"home-outline"} size={size} color={color} />
             ),
+            headerTitle: () => (
+              <SvgUri
+                width="150"
+                height="150"
+                uri="https://shopfront.takealot.com/5a21343c616641f68da892b452aa154c446d6610/static/media/src/images/logo.svg-f6ccb489b85bbddf97d6.svg"
+              />
+            ),
           }}
         ></Tab.Screen>
         <Tab.Screen
@@ -33,7 +39,7 @@ export default function App() {
           component={CategoryScreen}
           options={{
             tabBarLabel: "Categories",
-            tabBarcon: ({ color, size }) => (
+            tabBarIcon: ({ color, size }) => (
               <Ionicons name={"search-outline"} size={size} color={color} />
             ),
           }}
@@ -69,6 +75,12 @@ export default function App() {
           }}
         ></Tab.Screen>
       </Tab.Navigator>
+    );
+  }
+
+  return (
+    <NavigationContainer>
+      <TabNavigation />
     </NavigationContainer>
   );
 }
@@ -76,8 +88,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
