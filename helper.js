@@ -8,3 +8,7 @@ export const wrap = (str, size, br = "\n") => {
 export const discount = (price, percentage) => {
   return percentage == 0 ? price : (price * (1 - percentage / 100)).toFixed(2);
 };
+
+export const truncate = (str, size = 14) => {
+  return str.substring(0, size);
+};

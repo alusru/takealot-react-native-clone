@@ -1,17 +1,21 @@
 //import liraries
 import React, { Component } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import FeaturedCategory from "../components/FeaturedCategory";
-import ProductCard from "../components/ProductCard";
-import WhereyouLeft from "../components/WhereyouLeft";
+import ProductSection from "../components/ProductSection";
 
 // create a component
 const HomeScreen = () => {
   return (
     <View>
-      <FeaturedCategory heading={"Featured Categories"} />
+      <ScrollView>
+        <FeaturedCategory heading={"Featured Categories"} />
 
-      <WhereyouLeft />
+        <ProductSection heading={"Pick Up Where You Left Off"} />
+        <ProductSection heading={"Back to Work Essentials"} />
+        <ProductSection heading={"Exclusive to Takealot: GetUp"} />
+        <ProductSection heading={"Home Refresh"} />
+      </ScrollView>
     </View>
   );
 };

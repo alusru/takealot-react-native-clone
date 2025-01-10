@@ -66,7 +66,7 @@ export const products = [
     title: "1g-5kg Digital Kitchen Scale",
     price: 137,
     rating: "4.4",
-    discounts: 23,
+    discounts: 5,
   },
   {
     id: 4,
@@ -76,5 +76,15 @@ export const products = [
     price: 3999,
     rating: "4.4",
     discounts: 50,
+  },
+  {
+    id: 5,
+    image:
+      "https://media.takealot.com/covers_images/63b91c4106dd4334a8707272e1cbeb23/s-fb.file",
+    title:
+      "Professional Hair Clipper USB Charger Electric Hair Trimmer Men Razor",
+    price: 80,
+    rating: "4.4",
+    discounts: 2,
   },
 ];
