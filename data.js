@@ -88,3 +88,25 @@ export const products = [
     discounts: 2,
   },
 ];
+
+export const shopByDepartment = [
+  "Automotive & DIY",
+  "Baby & Toddler",
+  "Beauty",
+  "Books & Courses",
+  "Camping & Outdoor",
+  "Cellphones & Smartwatches",
+  "Fashion & Luggage",
+  "Computers & Electronics",
+  "Gaming",
+  "Garden, Pool & Patio",
+  "Groceries & Household",
+  "Health & Personal Care",
+  "Home & Appliances",
+  "Liquor",
+  "Office & Stationery",
+  "Pets",
+  "Sport & Training",
+  "Toys",
+  "TV, Audio & Media",
+];

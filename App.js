@@ -1,7 +1,15 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { StyleSheet, Text, View, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Pressable,
+  TextInput,
+  Platform,
+} from "react-native";
 import HomeScreen from "./screens/HomeScreen";
 import CategoryScreen from "./screens/CategoryScreen";
 import DealScreen from "./screens/DealScreen";
@@ -9,14 +17,32 @@ import ListScreen from "./screens/ListScreen";
 import AccountScreen from "./screens/AccountScreen";
 import { Ionicons } from "@expo/vector-icons";
 import { SvgUri } from "react-native-svg";
+import { useState } from "react";
 
 export default function App() {
   const Tab = createBottomTabNavigator();
   const Stack = createStackNavigator();
 
+  const [search, setSearch] = useState("");
+
+  function handleCartIcon() {
+    console.log("pressed");
+  }
+
   function TabNavigation() {
     return (
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={{
+          headerRight: () => (
+            <Pressable
+              style={{ marginHorizontal: 19 }}
+              onPress={handleCartIcon}
+            >
+              <Ionicons name="cart" size={20} color={"#000000"} />
+            </Pressable>
+          ),
+        }}
+      >
         <Tab.Screen
           name="Home"
           component={HomeScreen}
@@ -26,11 +52,40 @@ export default function App() {
               <Ionicons name={"home-outline"} size={size} color={color} />
             ),
             headerTitle: () => (
-              <SvgUri
-                width="150"
-                height="150"
-                uri="https://shopfront.takealot.com/5a21343c616641f68da892b452aa154c446d6610/static/media/src/images/logo.svg-f6ccb489b85bbddf97d6.svg"
-              />
+              <View style={{ flexDirection: "column" }}>
+                <View style={{ flexDirection: "row" }}>
+                  <Text
+                    style={{
+                      fontSize: 31,
+                      fontWeight: "bold",
+                      marginRight: 4,
+                    }}
+                  >
+                    takealot
+                  </Text>
+
+                  <Text
+                    style={{
+                      fontSize: 11,
+
+                      backgroundColor: "#0b79bf",
+                      padding: 9,
+                      color: "#fff",
+                      borderRadius: 50,
+                    }}
+                  >
+                    com
+                  </Text>
+                </View>
+
+                {/* <TextInput
+                  value={search}
+                  autoCapitalize={"none"}
+                  onChangeText={setSearch}
+                  style={styles.input}
+                  placeholder={"Search"}
+                /> */}
+              </View>
             ),
           }}
         ></Tab.Screen>
@@ -91,5 +146,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  input: {
+    backgroundColor: "#fff",
+    marginVertical: 5,
+    borderRadius: 4,
+    padding: Platform.OS ? 15 : 0,
   },
 });

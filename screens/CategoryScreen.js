@@ -5,7 +5,7 @@ import { View, Text, StyleSheet } from "react-native";
 // create a component
 const CategoryScreen = () => {
   return (
-    <View style={styles.container}>
+    <View>
       <Text>CategoryScreen</Text>
     </View>
   );
