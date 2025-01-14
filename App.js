@@ -86,14 +86,6 @@ export default function App() {
                     com
                   </Text>
                 </View>
-
-                {/* <TextInput
-                  value={search}
-                  autoCapitalize={"none"}
-                  onChangeText={setSearch}
-                  style={styles.input}
-                  placeholder={"Search"}
-                /> */}
               </View>
             ),
           }}

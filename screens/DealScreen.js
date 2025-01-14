@@ -1,12 +1,15 @@
 //import liraries
 import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
+import FeaturedCategory from "../components/FeaturedCategory";
+import ProductSection from "../components/ProductSection";
 
 // create a component
 const DealScreen = () => {
   return (
-    <View style={styles.container}>
-      <Text>DealScreen</Text>
+    <View>
+      <FeaturedCategory heading={"Shop Deals by Department"} />
+      <ProductSection heading={"TakealotMORE Member Exlcusive"} />
     </View>
   );
 };
