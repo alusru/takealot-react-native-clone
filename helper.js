@@ -12,3 +12,7 @@ export const discount = (price, percentage) => {
 export const truncate = (str, size = 14) => {
   return str.substring(0, size);
 };
+
+export const random = () => {
+  return Math.floor(Math.random() * 45) + 1;
+};

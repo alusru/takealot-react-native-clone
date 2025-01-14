@@ -1,4 +1,4 @@
-import { discount } from "./helper";
+import { discount, random } from "./helper";
 
 export const featureCategory = [
   {
@@ -42,7 +42,7 @@ export const featureCategory = [
 export const products = [
   {
     id: 1,
-    image: "https://prd.place/400",
+    image: "https://prd.place/400?id=6",
     title: "Lorem",
     price: 200,
     rating: "4.4",
@@ -50,7 +50,7 @@ export const products = [
   },
   {
     id: 2,
-    image: "https://prd.place/400",
+    image: "https://prd.place/400?id=19",
     title: "Lorem",
     price: 137,
     rating: "4.4",
@@ -59,19 +59,19 @@ export const products = [
 
   {
     id: 3,
-    image: "https://prd.place/400",
+    image: "https://prd.place/400?id=12",
     title: "Lorem",
     price: 137,
     rating: "4.4",
-    discounts: 5,
+    discounts: 0,
   },
   {
     id: 4,
-    image: "https://prd.place/400",
+    image: "https://prd.place/400?id=15",
     title: "Lorem",
-    price: 3999,
+    price: 50,
     rating: "4.4",
-    discounts: 50,
+    discounts: 0,
   },
   {
     id: 5,
@@ -79,7 +79,16 @@ export const products = [
     title: "Lorem",
     price: 80,
     rating: "4.4",
-    discounts: 2,
+    discounts: 41,
+  },
+
+  {
+    id: 6,
+    image: "https://prd.place/400?id=2",
+    title: "Lorem",
+    price: 150,
+    rating: "4.4",
+    discounts: 50,
   },
 ];
 
@@ -87,72 +96,76 @@ export const shopByDepartment = [
   {
     id: 1,
     title: "Automotive & DIY",
-    image: "https://prd.place/400",
+    image: `https://prd.place/400?id=${random}`,
   },
-  { id: 2, title: "Baby & Toddler", image: "https://prd.place/400" },
-  { id: 3, title: "Beauty", image: "https://prd.place/400" },
+  {
+    id: 2,
+    title: "Baby & Toddler",
+    image: `https://prd.place/400?id=${random}`,
+  },
+  { id: 3, title: "Beauty", image: `https://prd.place/400?id=${random}` },
   {
     id: 4,
     title: "Books & Courses",
-    image: "https://prd.place/400",
+    image: `https://prd.place/400?id=${random}`,
   },
   {
     id: 5,
     title: "Camping & Outdoor",
-    image: "https://prd.place/400",
+    image: `https://prd.place/400?id=${random}`,
   },
   {
     id: 6,
     title: "Cellphones & Smartwatches",
-    image: "https://prd.place/400",
+    image: `https://prd.place/400?id=${random}`,
   },
   {
     id: 7,
     title: "Fashion & Luggage",
-    image: "https://prd.place/400",
+    image: `https://prd.place/400?id=${random}`,
   },
   {
     id: 8,
     title: "Computers & Electronics",
-    image: "https://prd.place/400",
+    image: `https://prd.place/400?id=${random}`,
   },
-  { id: 9, title: "Gaming", image: "https://prd.place/400" },
+  { id: 9, title: "Gaming", image: `https://prd.place/400?id=${random}` },
   {
     id: 10,
     title: "Garden, Pool & Patio",
-    image: "https://prd.place/400",
+    image: `https://prd.place/400?id=${random}`,
   },
   {
     id: 11,
     title: "Groceries & Household",
-    image: "https://prd.place/400",
+    image: `https://prd.place/400?id=${random}`,
   },
   {
     id: 12,
     title: "Health & Personal Care",
-    image: "https://prd.place/400",
+    image: `https://prd.place/400?id=${random}`,
   },
   {
     id: 13,
     title: "Home & Appliances",
-    image: "https://prd.place/400",
+    image: `https://prd.place/400?id=${random}`,
   },
-  { id: 14, title: "Liquor", image: "https://prd.place/400" },
+  { id: 14, title: "Liquor", image: `https://prd.place/400?id=${random}` },
   {
     id: 15,
     title: "Office & Stationery",
-    image: "https://prd.place/400",
+    image: "https://prd.place/400?id=${random}",
   },
-  { id: 16, title: "Pets", image: "https://prd.place/400" },
+  { id: 16, title: "Pets", image: `https://prd.place/400?id=${random}` },
   {
     id: 17,
     title: "Sport & Training",
-    image: "https://prd.place/400",
+    image: `https://prd.place/400?id=${random}`,
   },
-  { id: 18, title: "Toys", image: "https://prd.place/400" },
+  { id: 18, title: "Toys", image: `https://prd.place/400?id=${random}` },
   {
     id: 19,
     title: "TV, Audio & Media",
-    image: "https://prd.place/400",
+    image: `https://prd.place/400?id=${random}`,
   },
 ];
