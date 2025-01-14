@@ -1,5 +1,8 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { NavigationContainer } from "@react-navigation/native";
+import {
+  NavigationContainer,
+  useNavigationState,
+} from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import {
   StyleSheet,
@@ -16,14 +19,13 @@ import DealScreen from "./screens/DealScreen";
 import ListScreen from "./screens/ListScreen";
 import AccountScreen from "./screens/AccountScreen";
 import { Ionicons } from "@expo/vector-icons";
-import { SvgUri } from "react-native-svg";
 import { useState } from "react";
 
 export default function App() {
   const Tab = createBottomTabNavigator();
   const Stack = createStackNavigator();
 
-  const [search, setSearch] = useState("");
+  const [routeState, setRouteState] = useState("");
 
   function handleCartIcon() {
     console.log("pressed");
@@ -34,12 +36,19 @@ export default function App() {
       <Tab.Navigator
         screenOptions={{
           headerRight: () => (
-            <Pressable
-              style={{ marginHorizontal: 19 }}
-              onPress={handleCartIcon}
-            >
-              <Ionicons name="cart" size={20} color={"#000000"} />
-            </Pressable>
+            <>
+              {routeState == "Home" ? null : (
+                <Pressable>
+                  <Ionicons name="search" size={20} color={"#000000"} />
+                </Pressable>
+              )}
+              <Pressable
+                style={{ marginHorizontal: 19 }}
+                onPress={handleCartIcon}
+              >
+                <Ionicons name="cart" size={20} color={"#000000"} />
+              </Pressable>
+            </>
           ),
         }}
       >
@@ -133,8 +142,18 @@ export default function App() {
     );
   }
 
+  function CurrentRoute() {
+    const currentRoute = useNavigationState(
+      (state) => state?.routes[state?.index]?.name
+    );
+    setRouteState(currentRoute);
+
+    return <></>;
+  }
+
   return (
     <NavigationContainer>
+      <CurrentRoute />
       <TabNavigation />
     </NavigationContainer>
   );
