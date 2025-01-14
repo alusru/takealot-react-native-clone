@@ -1,12 +1,13 @@
 //import liraries
 import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
+import Category from "../components/Category";
 
 // create a component
 const CategoryScreen = () => {
   return (
     <View>
-      <Text>CategoryScreen</Text>
+      <Category />
     </View>
   );
 };

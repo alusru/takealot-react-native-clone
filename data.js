@@ -42,18 +42,16 @@ export const featureCategory = [
 export const products = [
   {
     id: 1,
-    image:
-      "https://media.takealot.com/covers_images/f252d3702ccf4fdca43a431c67bc36af/s-fb.file",
-    title: "1g-5kg Digital Kitchen Scale",
+    image: "https://prd.place/400",
+    title: "Lorem",
     price: 200,
     rating: "4.4",
     discounts: 27,
   },
   {
     id: 2,
-    image:
-      "https://media.takealot.com/covers_images/f252d3702ccf4fdca43a431c67bc36af/s-fb.file",
-    title: "1g-5kg Digital Kitchen Scale",
+    image: "https://prd.place/400",
+    title: "Lorem",
     price: 137,
     rating: "4.4",
     discounts: 26,
@@ -61,28 +59,24 @@ export const products = [
 
   {
     id: 3,
-    image:
-      "https://media.takealot.com/covers_images/f252d3702ccf4fdca43a431c67bc36af/s-fb.file",
-    title: "1g-5kg Digital Kitchen Scale",
+    image: "https://prd.place/400",
+    title: "Lorem",
     price: 137,
     rating: "4.4",
     discounts: 5,
   },
   {
     id: 4,
-    image:
-      "https://media.takealot.com/covers_images/41e10c0efc00495399a1a1e546ed231e/s-xlpreview.file",
-    title: "GetUp Sprint Spinning Bike",
+    image: "https://prd.place/400",
+    title: "Lorem",
     price: 3999,
     rating: "4.4",
     discounts: 50,
   },
   {
     id: 5,
-    image:
-      "https://media.takealot.com/covers_images/63b91c4106dd4334a8707272e1cbeb23/s-fb.file",
-    title:
-      "Professional Hair Clipper USB Charger Electric Hair Trimmer Men Razor",
+    image: "https://prd.place/400?id=5",
+    title: "Lorem",
     price: 80,
     rating: "4.4",
     discounts: 2,
@@ -90,23 +84,75 @@ export const products = [
 ];
 
 export const shopByDepartment = [
-  "Automotive & DIY",
-  "Baby & Toddler",
-  "Beauty",
-  "Books & Courses",
-  "Camping & Outdoor",
-  "Cellphones & Smartwatches",
-  "Fashion & Luggage",
-  "Computers & Electronics",
-  "Gaming",
-  "Garden, Pool & Patio",
-  "Groceries & Household",
-  "Health & Personal Care",
-  "Home & Appliances",
-  "Liquor",
-  "Office & Stationery",
-  "Pets",
-  "Sport & Training",
-  "Toys",
-  "TV, Audio & Media",
+  {
+    id: 1,
+    title: "Automotive & DIY",
+    image: "https://prd.place/400",
+  },
+  { id: 2, title: "Baby & Toddler", image: "https://prd.place/400" },
+  { id: 3, title: "Beauty", image: "https://prd.place/400" },
+  {
+    id: 4,
+    title: "Books & Courses",
+    image: "https://prd.place/400",
+  },
+  {
+    id: 5,
+    title: "Camping & Outdoor",
+    image: "https://prd.place/400",
+  },
+  {
+    id: 6,
+    title: "Cellphones & Smartwatches",
+    image: "https://prd.place/400",
+  },
+  {
+    id: 7,
+    title: "Fashion & Luggage",
+    image: "https://prd.place/400",
+  },
+  {
+    id: 8,
+    title: "Computers & Electronics",
+    image: "https://prd.place/400",
+  },
+  { id: 9, title: "Gaming", image: "https://prd.place/400" },
+  {
+    id: 10,
+    title: "Garden, Pool & Patio",
+    image: "https://prd.place/400",
+  },
+  {
+    id: 11,
+    title: "Groceries & Household",
+    image: "https://prd.place/400",
+  },
+  {
+    id: 12,
+    title: "Health & Personal Care",
+    image: "https://prd.place/400",
+  },
+  {
+    id: 13,
+    title: "Home & Appliances",
+    image: "https://prd.place/400",
+  },
+  { id: 14, title: "Liquor", image: "https://prd.place/400" },
+  {
+    id: 15,
+    title: "Office & Stationery",
+    image: "https://prd.place/400",
+  },
+  { id: 16, title: "Pets", image: "https://prd.place/400" },
+  {
+    id: 17,
+    title: "Sport & Training",
+    image: "https://prd.place/400",
+  },
+  { id: 18, title: "Toys", image: "https://prd.place/400" },
+  {
+    id: 19,
+    title: "TV, Audio & Media",
+    image: "https://prd.place/400",
+  },
 ];
