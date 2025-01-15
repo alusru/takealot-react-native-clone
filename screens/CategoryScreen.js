@@ -2,12 +2,13 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Category from "../components/Category";
+import { shopByDepartment } from "../data";
 
 // create a component
 const CategoryScreen = () => {
   return (
     <View>
-      <Category />
+      <Category data={shopByDepartment} />
     </View>
   );
 };

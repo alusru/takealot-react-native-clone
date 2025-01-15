@@ -46,7 +46,7 @@ export const products = [
     title: "Lorem",
     price: 200,
     rating: "4.4",
-    discounts: 27,
+    discounts: 12,
   },
   {
     id: 2,
@@ -167,5 +167,24 @@ export const shopByDepartment = [
     id: 19,
     title: "TV, Audio & Media",
     image: `https://prd.place/400?id=19`,
+  },
+];
+
+export const lists = [
+  {
+    id: 1,
+    title: "Wish List",
+    image: `https://prd.place/400?id=1`,
+  },
+  {
+    id: 2,
+    title: "Outdoor Stuff",
+    image: `https://prd.place/400?id=2`,
+  },
+  { id: 3, title: "Beauty", image: `https://prd.place/400?id=3` },
+  {
+    id: 4,
+    title: "Home Office",
+    image: `https://prd.place/400?id=4`,
   },
 ];

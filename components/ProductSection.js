@@ -10,7 +10,7 @@ const ProductSection = ({ heading }) => {
     return <ProductCard item={item} />;
   }
   return (
-    <View>
+    <View style={{ marginTop: 20 }}>
       <View
         style={{
           backgroundColor: "#fff",

@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, FlatList, Image } from "react-native";
 import { shopByDepartment } from "../data";
 
 // create a component
-const Category = () => {
+const Category = ({ data }) => {
   function CategoryUI({ item }) {
     const { title, image } = item;
     return (
@@ -34,7 +34,8 @@ const Category = () => {
   }
   return (
     <FlatList
-      data={shopByDepartment}
+      data={data}
+      style={{ marginTop: 15 }}
       renderItem={CategoryUI}
       keyExtractor={(item) => item.id}
       horizontal={false}
