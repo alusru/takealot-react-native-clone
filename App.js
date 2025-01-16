@@ -20,6 +20,7 @@ import ListScreen from "./screens/ListScreen";
 import AccountScreen from "./screens/AccountScreen";
 import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
+import ProductScreen from "./screens/single-product/ProductScreen";
 
 export default function App() {
   const Tab = createBottomTabNavigator();
@@ -53,8 +54,8 @@ export default function App() {
         }}
       >
         <Tab.Screen
-          name="Home"
-          component={HomeScreen}
+          name="StackNavigator"
+          component={StackNavigator}
           options={{
             tabBarLabel: "Home",
             tabBarIcon: ({ color, size }) => (
@@ -114,6 +115,11 @@ export default function App() {
           name="Lists"
           component={ListScreen}
           options={{
+            headerLeft: () => (
+              <Pressable onPress={() => console.log("pressed")}>
+                <Ionicons name={"add"} size={24} color={"blue"} />
+              </Pressable>
+            ),
             tabBarLabel: "Lists",
             tabBarIcon: ({ color, size }) => (
               <Ionicons name={"heart-outline"} size={size} color={color} />
@@ -131,6 +137,23 @@ export default function App() {
           }}
         ></Tab.Screen>
       </Tab.Navigator>
+    );
+  }
+
+  function StackNavigator() {
+    return (
+      <Stack.Navigator screenOptions={{ headerShown: true }}>
+        <Stack.Screen
+          name="Home"
+          options={{ headerTitle: false }}
+          component={HomeScreen}
+        />
+        <Stack.Screen
+          options={{ headerTitle: () => <></> }}
+          name="Product"
+          component={ProductScreen}
+        />
+      </Stack.Navigator>
     );
   }
 

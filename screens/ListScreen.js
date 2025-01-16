@@ -12,28 +12,20 @@ import { lists } from "../data";
 import ProductSection from "../components/ProductSection";
 
 // create a component
-const ListScreen = ({ navigation }) => {
-  const snapPoints = useMemo(() => ["100%"], []);
-  const bottomSheetModalRef = useRef(null);
+const ListScreen = () => {
+  // const snapPoints = useMemo(() => ["100%"], []);
+  // const bottomSheetModalRef = useRef(null);
 
-  const handleOpen = () => bottomSheetModalRef.current?.expand();
+  // const handleOpen = () => bottomSheetModalRef.current?.expand();
 
   function openUp() {
     console.log("pressed");
   }
 
-  navigation.setOptions({
-    headerLeft: () => (
-      <Pressable onPress={openUp}>
-        <Ionicons name={"add"} size={24} color={"blue"} />
-      </Pressable>
-    ),
-  });
   return (
     <View>
-      <GestureHandlerRootView>
+      {/* <GestureHandlerRootView>
         <BottomSheetModalProvider>
-          <Text onPress={handleOpen}>handleOpen</Text>
           <BottomSheetModal
             index={-1}
             ref={bottomSheetModalRef}
@@ -46,7 +38,7 @@ const ListScreen = ({ navigation }) => {
             </BottomSheetView>
           </BottomSheetModal>
         </BottomSheetModalProvider>
-      </GestureHandlerRootView>
+      </GestureHandlerRootView> */}
       <View style={{ marginVertical: 12 }}>
         <View
           style={{ flexDirection: "row", backgroundColor: "#fff", padding: 20 }}

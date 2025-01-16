@@ -1,67 +1,70 @@
 //import liraries
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 import { discount, truncate, wrap } from "../helper";
 import { Ionicons } from "@expo/vector-icons";
 
 // create a component
-const ProductCard = ({ item }) => {
+const ProductCard = ({ item, pressHandler }) => {
   const { title, image, price, rating, discounts } = item;
+
   return (
-    <View
-      style={{
-        borderWidth: 1,
-        padding: 21,
-        marginHorizontal: 4,
-        borderColor: "#9b9b9b",
-        backgroundColor: "#ffffff",
-      }}
-    >
-      <View>
-        {discounts == 0 ? (
-          <></>
-        ) : (
-          <View
-            style={{
-              backgroundColor: "#0b79bf",
-              width: 40,
-              height: 40,
-              position: "absolute",
-              top: -15,
-              left: -15,
-              right: 0,
-              zIndex: 100,
-              justifyContent: "center",
-              alignItems: "center",
-              borderRadius: 5,
-            }}
-          >
-            <Text style={{ color: "#ffffff", fontWeight: "bold" }}>
-              {discounts}% OFF
+    <Pressable onPress={pressHandler}>
+      <View
+        style={{
+          borderWidth: 1,
+          padding: 21,
+          marginHorizontal: 4,
+          borderColor: "#9b9b9b",
+          backgroundColor: "#ffffff",
+        }}
+      >
+        <View>
+          {discounts == 0 ? (
+            <></>
+          ) : (
+            <View
+              style={{
+                backgroundColor: "#0b79bf",
+                width: 40,
+                height: 40,
+                position: "absolute",
+                top: -15,
+                left: -15,
+                right: 0,
+                zIndex: 100,
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 5,
+              }}
+            >
+              <Text style={{ color: "#ffffff", fontWeight: "bold" }}>
+                {discounts}% OFF
+              </Text>
+            </View>
+          )}
+          <Image style={styles.img} source={{ uri: image }} />
+          <Text>{truncate(wrap(title, 20), 38)}</Text>
+          <View style={styles.priceDiscount}>
+            <Text style={styles.price}>R{discount(price, discounts)}</Text>
+            <Text style={styles.discount}>
+              {price == discount(price, discounts) ? null : `R${price}`}
             </Text>
           </View>
-        )}
-        <Image style={styles.img} source={{ uri: image }} />
-        <Text>{truncate(wrap(title, 20), 38)}</Text>
-        <View style={styles.priceDiscount}>
-          <Text style={styles.price}>R{discount(price, discounts)}</Text>
-          <Text style={styles.discount}>
-            {price == discount(price, discounts) ? null : `R${price}`}
-          </Text>
-        </View>
-        <View>
-          <Text style={styles.rating}>
-            <Ionicons
-              style={{ marginTop: 50 }}
-              name="star-sharp"
-              size={15}
-              color={"#fbb600"}
-            />
-            {rating}
-          </Text>
+          <View>
+            <Text style={styles.rating}>
+              <Ionicons
+                style={{ marginTop: 50 }}
+                name="star-sharp"
+                size={15}
+                color={"#fbb600"}
+              />
+              {rating}
+            </Text>
+          </View>
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 

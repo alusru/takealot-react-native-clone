@@ -5,16 +5,25 @@ import FeaturedCategory from "../components/FeaturedCategory";
 import ProductSection from "../components/ProductSection";
 
 // create a component
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   return (
     <View>
       <ScrollView>
         <FeaturedCategory heading={"Featured Categories"} />
 
-        <ProductSection heading={"Pick Up Where You Left Off"} />
-        <ProductSection heading={"Back to Work Essentials"} />
-        <ProductSection heading={"Exclusive to Takealot: GetUp"} />
-        <ProductSection heading={"Home Refresh"} />
+        <ProductSection
+          navigation={navigation}
+          heading={"Pick Up Where You Left Off"}
+        />
+        <ProductSection
+          navigation={navigation}
+          heading={"Back to Work Essentials"}
+        />
+        <ProductSection
+          navigation={navigation}
+          heading={"Exclusive to Takealot: GetUp"}
+        />
+        <ProductSection navigation={navigation} heading={"Home Refresh"} />
       </ScrollView>
     </View>
   );

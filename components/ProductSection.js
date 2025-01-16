@@ -5,9 +5,19 @@ import ProductCard from "./ProductCard";
 import { products } from "../data";
 
 // create a component
-const ProductSection = ({ heading }) => {
+const ProductSection = ({ heading, navigation }) => {
   function SliderUI({ item }) {
-    return <ProductCard item={item} />;
+    const { title, image, price, rating, discounts } = item;
+    function pressHandler() {
+      navigation.navigate("Product", {
+        title: title,
+        image: image,
+        price: price,
+        rating: rating,
+        discounts: discounts,
+      });
+    }
+    return <ProductCard item={item} pressHandler={pressHandler} />;
   }
   return (
     <View style={{ marginTop: 20 }}>
