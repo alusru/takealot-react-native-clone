@@ -2,43 +2,19 @@
 import { Ionicons } from "@expo/vector-icons";
 import React, { Component, useMemo, useRef } from "react";
 import { View, Text, StyleSheet, Pressable } from "react-native";
-import BottomSheetModal, {
-  BottomSheetView,
-  BottomSheetModalProvider,
-} from "@gorhom/bottom-sheet";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
+
 import Category from "../components/Category";
 import { lists } from "../data";
 import ProductSection from "../components/ProductSection";
 
 // create a component
-const ListScreen = () => {
-  // const snapPoints = useMemo(() => ["100%"], []);
-  // const bottomSheetModalRef = useRef(null);
-
-  // const handleOpen = () => bottomSheetModalRef.current?.expand();
-
+const ListScreen = ({ navigation }) => {
   function openUp() {
     console.log("pressed");
   }
 
   return (
     <View>
-      {/* <GestureHandlerRootView>
-        <BottomSheetModalProvider>
-          <BottomSheetModal
-            index={-1}
-            ref={bottomSheetModalRef}
-            snapPoints={snapPoints}
-            handleIndicatorStyle={{ backgroundColor: "#f00" }}
-            enablePanDownToClose={true}
-          >
-            <BottomSheetView>
-              <Text>LIST</Text>
-            </BottomSheetView>
-          </BottomSheetModal>
-        </BottomSheetModalProvider>
-      </GestureHandlerRootView> */}
       <View style={{ marginVertical: 12 }}>
         <View
           style={{ flexDirection: "row", backgroundColor: "#fff", padding: 20 }}
@@ -49,7 +25,10 @@ const ListScreen = () => {
           <Text style={{ flex: 1, color: "blue" }}>Manage</Text>
         </View>
         <Category data={lists} />
-        <ProductSection heading={"Customers Also Bought"} />
+        <ProductSection
+          navigation={navigation}
+          heading={"Customers Also Bought"}
+        />
       </View>
     </View>
   );

@@ -145,7 +145,7 @@ export default function App() {
       <Stack.Navigator screenOptions={{ headerShown: true }}>
         <Stack.Screen
           name="Home"
-          options={{ headerTitle: false }}
+          options={{ headerShown: false }}
           component={HomeScreen}
         />
         <Stack.Screen
