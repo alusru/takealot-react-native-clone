@@ -63,9 +63,6 @@ const ProductScreen = ({ route }) => {
         <View>
           <Text>Estimated Delivery</Text>
         </View>
-        <View>
-          <Text>Estimated Delivery</Text>
-        </View>
       </View>
     </View>
   );
