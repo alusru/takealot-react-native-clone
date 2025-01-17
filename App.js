@@ -26,7 +26,7 @@ export default function App() {
   const Tab = createBottomTabNavigator();
   const Stack = createStackNavigator();
 
-  const [routeState, setRouteState] = useState("");
+
 
   function handleCartIcon() {
     console.log("pressed");
@@ -35,10 +35,10 @@ export default function App() {
   function TabNavigation() {
     return (
       <Tab.Navigator
-        screenOptions={{
+        screenOptions={({ route }) => ({
           headerRight: () => (
             <>
-              {routeState == "Home" ? null : (
+              {route.name == "StackNavigator" ? null : (
                 <Pressable>
                   <Ionicons name="search" size={20} color={"#000000"} />
                 </Pressable>
@@ -51,7 +51,7 @@ export default function App() {
               </Pressable>
             </>
           ),
-        }}
+        })}
       >
         <Tab.Screen
           name="StackNavigator"
@@ -157,18 +157,8 @@ export default function App() {
     );
   }
 
-  function CurrentRoute() {
-    const currentRoute = useNavigationState(
-      (state) => state?.routes[state?.index]?.name
-    );
-    setRouteState(currentRoute);
-
-    return <></>;
-  }
-
   return (
     <NavigationContainer>
-      <CurrentRoute />
       <TabNavigation />
     </NavigationContainer>
   );
