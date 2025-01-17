@@ -19,3 +19,5 @@ npm run start
 ```
 This will start the Expo development server and provide you with a QR code to scan with your mobile device. You can also run the app on an emulator by selecting the appropriate option in the Expo interface.
 
+![TakeAlot Clone](clone.png)
+
