@@ -188,3 +188,52 @@ export const lists = [
     image: `https://prd.place/400?id=4`,
   },
 ];
+
+export const accounts = [
+  {
+    id: 1,
+    title: "Orders",
+  },
+  {
+    id: 2,
+    title: "Returns",
+  },
+  { id: 3, title: "Invoices" },
+  {
+    id: 4,
+    title: "Address Book",
+  },
+  {
+    id: 5,
+    title: "Product Reviews",
+  },
+  {
+    id: 6,
+    title: "TakealotMORE",
+  },
+  {
+    id: 7,
+    title: "Coupons & Offers",
+  },
+  {
+    id: 8,
+    title: "Load Gift Voucher",
+  },
+  { id: 9, title: "Credits & Refunds" },
+];
+
+export const settings = [
+  {
+    id: 1,
+    title: "Account Settings",
+  },
+  {
+    id: 2,
+    title: "App Settings",
+  },
+  { id: 3, title: "Help" },
+  {
+    id: 4,
+    title: "Takealot Group",
+  },
+];
